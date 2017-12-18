@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="x-UA-Compatible" content="ie=edge">
+	<title>Gráfico</title>
+</head>
+<body>
+
+	<canvas class="line-chart"></canvas>	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+
+	<script>
+		var ctx = document.getElementsByClassName("line-chart");
+
+		var chartGraph = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+				datasets: [{
+					label: "Rendimento Desenvolvendo para Web",
+					data: [5,10,5,14,20,20,20,30,45,79,85,80,90],
+					borderwidth: 6,
+					borderColor: 'rgba(77, 166, 253, 0.85)',
+					backgroundColor: 'transparent'
+				},
+				{
+					label: "Tempo desenvolvendo",
+					data: [45,45,50,55,65,65,65,70,73,80,85,87,95],
+					borderwidth: 6,
+					borderColor: 'rgba(6, 204, 6, 0.85)',
+					backgroundColor: 'transparent'
+				}
+			]
+		},
+		options: {
+			title: {
+				display: true,
+				fontSize: 20,
+				text: "Tempo desenvolvendo"
+			},
+			labels: {
+				fontStyle: "bold"
+			},
+		}
+	});
+	</script>
+
+</body>
+</html>
